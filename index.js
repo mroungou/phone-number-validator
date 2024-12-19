@@ -1,0 +1,1 @@
+const phoneNumber = document.getElementById('user-input')
