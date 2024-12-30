@@ -72,4 +72,17 @@ button:hover {
   font-weight: bold;
   color: #555;
   margin-top: 10px;
+}
+
+.number {
+  text-align: center;
+}
+.number span {
+  display: block;
+}
+.number .valid {
+  color: greenyellow;
+}
+.number .invalid {
+  color: red;
 }/*# sourceMappingURL=styles.css.map */
