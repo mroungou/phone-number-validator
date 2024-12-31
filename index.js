@@ -21,7 +21,7 @@ The subscriber number (last 4 digits) has no restrictions.
 
 
 
-const phoneNumberRegex = /^(\+1|1)?(\s|\-|\()?([2-9][\d]{2})(\s|\-|\()?([2-9][\d]{2})(\s|\-|\()?([\d]{4})$/g
+const phoneNumberRegex = /^(\+1|1)?[\s\-]?(\([2-9][\d]{2}\)|[2-9][\d]{2})[\s\-]?([2-9][\d]{2})[\s\-]?([\d]{4})$/
 
 const validateNumber = () => {
     const number = {
@@ -29,6 +29,10 @@ const validateNumber = () => {
         value: numberInput.value,
     }
 
+    if (number.value === '') {
+        window.alert('Please provide a phone number')
+        return
+    }
 
     /* adding the number that was checked to the numbers array */
     if (phoneNumberRegex.test(number.value)) {
@@ -42,7 +46,9 @@ const validateNumber = () => {
     numbers.unshift(number)
 }
 
-const clearResults = () => {}
+const clearResults = () => {
+    outputDiv.innerHTML = ''
+}
 
 document.getElementById('check-btn').addEventListener('click', validateNumber)
 document.getElementById('clear-btn').addEventListener('click', clearResults)
